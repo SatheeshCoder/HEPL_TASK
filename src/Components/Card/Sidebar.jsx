@@ -43,7 +43,7 @@ const gradientStyle = showAvatar
     <>
       <Paper
         elevation={3}
-        sx={{ mt: 2, p: 3, maxWidth: "600px", borderRadius: "8px" }}
+        sx={{ mt: 2, p: 3, borderRadius: "8px" }}
       >
         <Box sx={{ flexGrow: 1, overflow: "hidden" }}>
           <Box

@@ -4,16 +4,16 @@ import {
   Card,
   CardContent,
   CardHeader,
-  
   IconButton,
-  
   Badge,
-} from "@mui/material";import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
+} from "@mui/material";
+import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
+import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import { styled } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
-
 import UserImage from "../../assets/user.png";
 import { Small, Tiny } from "../Typograpy/Typography";
+
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
     backgroundColor: "#44b700",
@@ -42,29 +42,28 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     },
   },
 }));
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    marginBottom:"10px",
-    
-    borderRadius:"10px"
+    flexDirection: "row", // Change to column for responsiveness
+    marginBottom: "10px",
+    borderRadius: "10px",
   },
-  media: {
-    height: 0,
-    paddingTop: "56.25%", // 16:9
+  content: {
+    color: "#03a9f4",
   },
   actions: {
     display: "flex",
+    justifyContent: "space-between", // Adjust alignment for responsiveness
     alignItems: "center",
     padding: theme.spacing(1),
   },
   iconButton: {
     marginLeft: "auto",
   },
-  content: {
-    color: "#03a9f4",
-  },
 }));
+
 const limitText = (text, limit) => {
   if (text.length <= limit) {
     return text;
@@ -72,9 +71,11 @@ const limitText = (text, limit) => {
     return text.slice(0, limit) + "...";
   }
 };
+
 const originalText =
   "Caption for the Instagram post goes here. You can add more details and customize the layout as needed.";
 const limitedText = limitText(originalText, 30);
+
 const InstagramPost = () => {
   const classes = useStyles();
 
@@ -104,9 +105,8 @@ const InstagramPost = () => {
         <IconButton>
           <LanguageOutlinedIcon />
         </IconButton>
-       
+
         <IconButton className={classes.iconButton}>
-          {/* <SendIcon /> */}
           <RemoveRedEyeOutlinedIcon />
         </IconButton>
       </div>
